@@ -10,4 +10,4 @@
 4. 增加显示访问者IP地址（调用 [https://pv.sohu.com/cityjson?ie=utf-8](https://pv.sohu.com/cityjson?ie=utf-8 "https://pv.sohu.com/cityjson?ie=utf-8") 接口）
 5.修改背景图为随机,内置了8张风景图,每次进入都会随机展示
 6.在线demo地址
-
+https://jiangwanyutao.github.io/jiangwan/
