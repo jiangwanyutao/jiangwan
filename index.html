@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>江晚正愁余引导页</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<link rel="stylesheet" href="./images/font/iconfont.css">
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<style>
+	ul,
+	li {
+		list-style: none;
+	}
+
+	.icon {
+		width: 2em;
+		height: 2em;
+		vertical-align: -0.15em;
+		fill: currentColor;
+		overflow: hidden;
+	}
+</style>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<span class="img">
+					<img src="./images/touxiang.jpg" alt="个人头像">
+				</span>
+			</div>
+			<div class="content">
+				<div class="inner">
+					<h1 class="animate__animated animate__bounce">江晚正愁余引导页</h1>
+					<!-- 一言接口 -->
+					<p id="hitokoto">
+					<h3 style="color:red">
+						<a href="#" id="hitokoto_text"></a>
+					</h3>
+					</p>
+					<br />
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#intro">个人博客</a></li>
+					<li><a href="#work">个人影视站</a></li>
+					<li><a href="#about">个人云盘</a></li>
+				</ul>
+			</nav>
+
+			<ul class="jiangwan">
+				<li>
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1015134040&amp;site=qq&amp;menu=yes">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-QQ"></use>
+						</svg>
+						&nbsp;&nbsp;</a>
+					</p>
+				</li>
+				<li>
+					<a target="_blank" href="mailto:1015134040@qq.com">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-mail"></use>
+						</svg>&nbsp;&nbsp;
+					</a>
+				</li>
+				<li>
+					<a target="_blank" href="https://github.com/jiangwanyutao">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-github"></use>
+						</svg>&nbsp;&nbsp;
+				</li>
+				<li>
+					<a target="_blank" href="https://gitee.com/yutaocangku">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-gitee"></use>
+						</svg>&nbsp;&nbsp;
+				</li>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- 个人博客 -->
+			<article id="intro">
+				<h2 class="major">简介</h2>
+				<span class="image main">
+					<img src="images/blog.png" alt="" />
+				</span>
+				<p>
+					<a href="http://jwyt.xyz" target="_blank">这里是博客地址哦</a>
+				</p>
+				<p>记录本人技术道路上的点点滴滴.</p>
+			</article>
+
+			<!-- 个人影视站 -->
+			<article id="work">
+				<h2 class="major">个人影视站</h2>
+				<span class="image main"><img src="images/yingshi.png" alt="" /></span>
+				<p> <a href="http://movie.jwyt.xyz" target="_blank">这里是影视站地址入口哦</a>
+				</p>
+				<p>这里是影视网站,闲暇时间看看视频</p>
+				<p></p>
+			</article>
+
+			<!-- 个人云盘 -->
+			<article id="about">
+				<h2 class="major">个人云盘</h2>
+				<span class="image main"><img src="images/yun.jpg" alt="云盘图片" /></span>
+				<p> <a href="#">私有云盘,暂时不贴地址哦</a>
+				</p>
+				<p></p>
+			</article>
+
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">
+				<br>
+				您的IP:
+				<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+				<script type="text/javascript">document.write(returnCitySN["cip"])</script>
+				<script>
+					var mydate = new Date();
+					document.writeln("Copyright&nbsp;&copy;&nbsp;- " + mydate.getFullYear() + -(mydate.getMonth() + 1) + -mydate.getDate() + '&nbsp;江晚正愁余<br/>');</script>
+				<span id="jinrishici-sentence">正在加载今日诗词....</span>
+				<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+				<br>
+
+			</p>
+		</footer>
+
+	</div>
+
+	<!-- BG -->
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="./images/font/iconfont.js"></script>
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.open('get', 'https://v1.hitokoto.cn');
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4) {
+				var data = JSON.parse(xhr.responseText);
+				var hitokoto = document.getElementById('hitokoto_text');
+				hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+				hitokoto.innerText = data.hitokoto;
+			}
+		}
+		xhr.send();
+
+		var bodyBgs = [];    //创建一个数组变量来存储背景图片的路径
+		bodyBgs[0] = "images/bg/1.jpg";
+		bodyBgs[1] = "images/bg/2.jpg";
+		bodyBgs[2] = "images/bg/3.jpg";
+		bodyBgs[3] = "images/bg/4.jpg";
+		bodyBgs[4] = "images/bg/5.jpg";
+		bodyBgs[5] = "images/bg/6.jpg";
+		bodyBgs[6] = "images/bg/7.jpg";
+		bodyBgs[7] = "images/bg/8.jpg";
+		bodyBgs[8] = "images/bg/9.jpg";
+		var randomBgIndex = Math.round(Math.random() * 8);
+		document.write('<style>body{background:url(' + bodyBgs[randomBgIndex] + ') no-repeat 100% 100%;backgroun-size:100% 100%}</style>');
+	</script>
+
+</body>
+
+</html>
